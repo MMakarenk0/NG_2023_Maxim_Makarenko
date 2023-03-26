@@ -6,17 +6,17 @@ choosedOper = input("Choose the operation(+,-,*,/,**,sqrt): ")
 
 match choosedOper:
     case "+":
-        print(f"The result of addition is: {firstNum+secondNum}")
+        print(f"{firstNum} + {secondNum} = {firstNum+secondNum}")
     case "-":
-        print(f"The result of subtraction is: {firstNum-secondNum}")
+        print(f"{firstNum} - {secondNum} = {firstNum-secondNum}")
     case "*":
-        print(f"The result of multiplication is: {firstNum*secondNum}")
+        print(f"{firstNum} * {secondNum} = {firstNum*secondNum}")
     case "/":
-        print(f"The result of division is: {firstNum/secondNum}")
+        print(f"{firstNum} / {secondNum} = {firstNum/secondNum}")
     case "**": 
-        print(f"The result of elevation in degree {secondNum} is: {firstNum**secondNum}")
+        print(f"{firstNum}^{secondNum} = {firstNum**secondNum}")
     case "sqrt":
-        print(f"The result of finding the square root is: {sqrt(firstNum)}")
+        print(f"√{firstNum} = {sqrt(firstNum)}")
     case _:
         print("Invalid operation selected!")
 
