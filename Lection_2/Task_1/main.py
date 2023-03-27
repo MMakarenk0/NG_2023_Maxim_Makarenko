@@ -8,7 +8,7 @@ elements = list(txt.split(", "))
 searchElem = input("Enter element to find it: ")
 searchNum = elements.count(searchElem)
 
-# Output number of 
+# Output number of searched item
 if searchNum > 1:
     print(f"{searchNum} elements found")
 elif searchNum == 1:
