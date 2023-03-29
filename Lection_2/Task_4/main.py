@@ -1,10 +1,7 @@
 def getIndex(searchName): # Function that returns index with name
-    i = 0
-    while i < len(bookList):
-        if bookList[i]["name"]==searchName:
-            return i
-        i+=1
-    print("No books with this name!")
+    for book in bookList:
+        if bookList[bookList.index(book)]["name"]==searchName:
+            return bookList.index(book)
 
 bookList = list() # created list for dictionaries
 
@@ -14,28 +11,36 @@ while True:
     match nextStep:
         case "create":
             # creating new dict for book
-            newDict = {}
-            newDict["name"] = input("Enter new book's name: ")
-            newDict["author"] = input("Enter new book's author: ")
-            newDict["pagesNum"] = int(input("Enter new book's number of pages: "))
-            newDict["genre"] = input("Enter new book's genre: ")
-            newDict["cover"] = input("Enter new book's cover: ")
-            bookList.append(newDict)
+            newBook = {}
+            newBook["name"] = input("Enter new book's name: ")
+            newBook["author"] = input("Enter new book's author: ")
+            newBook["pagesNum"] = int(input("Enter new book's number of pages: "))
+            newBook["genre"] = input("Enter new book's genre: ")
+            newBook["cover"] = input("Enter new book's cover: ")
+            bookList.append(newBook)
             #deleting book with name
         case "delete":
             searchName = input("Enter name of book to delete it: ")
-            
-            del bookList[getIndex((searchName))]
+            try:
+                del bookList[getIndex((searchName))]
+            except:
+                print("No books with this name!")
             # show dict with name
         case "show":
             searchName = input("Enter name of book to find it: ")
-            print(bookList[getIndex((searchName))])
+            try:
+                print(bookList[getIndex((searchName))])
+            except: 
+                print("No books with this name!")
             # edit dict's value with name and key
         case "edit":
             searchName = input("Enter name of book to edit it: ")
             key = input("Enter what do you want to edit: ")
             value = input("Enter the changes: ")
-            bookList[getIndex((searchName))][key] = value
+            try:
+                bookList[getIndex((searchName))][key] = value
+            except:
+                print("No books with this name!")
             # show whole list
         case "showList":
             print(bookList)
