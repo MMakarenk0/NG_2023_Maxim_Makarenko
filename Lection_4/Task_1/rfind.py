@@ -2,10 +2,10 @@ import os
 import argparse
 
 # Function for seaching folders and subfolders using os.walk method to recursively walk through all subfolders of a specified folder
-def getFile(folder, file):
-    for root, dirs, files in os.walk(args.folder):
+def getFile(folder: str, searchFile: str):
+    for root, dirs, files in os.walk(folder):
         for file in files:
-            if args.file in file: 
+            if searchFile in file: 
                 print(f"File found: {os.path.join(root, file)}")
 
 parser = argparse.ArgumentParser()
