@@ -42,8 +42,7 @@ def editBook(bookList):
 bookList = list() # created list for dictionaries
 
 while True:
-    info()
-    nextStep = input("What is the next step?: ")
+    nextStep = input('What is the next step?("help" for info): ')
     match nextStep:
         case "create":
             # creating new dict for book
@@ -61,6 +60,9 @@ while True:
         case "showList":
             print(bookList)
             # breaks the loop
+        case "help":
+            info()
+            # show possible operations for user
         case "exit":
             break
             # exeption 
