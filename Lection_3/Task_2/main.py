@@ -1,8 +1,11 @@
-def rhombus(counter1 = 6, counter2 = 0):
-    print(" "*(counter1-1) + "*" + " "*(counter2) + "*")
+
+def rhombus(counter1 = 5, counter2 = 1):
+    print(" "*(counter1-1) + "*"*counter2)
     if counter1 > 3:
         rhombus(counter1-1, counter2+2)
-    print(" "*(counter1-1) + "*" + " "*(counter2) + "*")
+    else:  
+        return None
+    print(" "*(counter1-1) + "*"*counter2)
 
 rhombus()
 rhombus(10)
