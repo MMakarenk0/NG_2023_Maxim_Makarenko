@@ -1,20 +1,39 @@
 from math import sqrt
  
+def summa(firstNum, secondNum):
+    return firstNum + secondNum
+
+def diff(firstNum, secondNum):
+    return firstNum - secondNum
+    
+def mult(firstNum, secondNum):
+    return firstNum * secondNum
+
+def div(firstNum, secondNum):
+    return firstNum / secondNum
+
+def pow(firstNum, secondNum):
+    return firstNum ** secondNum
+
+
 def operation(firstNum, secondNum, choosedOper):
     match choosedOper:
         case "+":
-            print(f"{firstNum} + {secondNum} = {firstNum+secondNum}")
+            print(summa(firstNum, secondNum))
         case "-":
-            print(f"{firstNum} - {secondNum} = {firstNum-secondNum}")
+            print(diff(firstNum, secondNum))
         case "*":
-            print(f"{firstNum} * {secondNum} = {firstNum*secondNum}")
+            print(mult(firstNum, secondNum))
         case "/":
-            print(f"{firstNum} / {secondNum} = {firstNum/secondNum}")
+            print(div(firstNum, secondNum))
         case "**": 
-            print(f"{firstNum}^{secondNum} = {firstNum**secondNum}")
+            print(pow(firstNum, secondNum))
         case "sqrt":
-            print(f"√{firstNum} = {sqrt(firstNum)}")
+            print(sqrt(firstNum))
         case _:
             print("Invalid operation selected!")
 
-operation(float(input("Enter first number: ")), float(input("Enter second number: ")), input("Choose the operation(+,-,*,/,**,sqrt): "))
+firstNum, secondNum = float(input("Enter first number: ")), float(input("Enter second number: "))
+choosedOper = input("Choose the operation(+,-,*,/,**,sqrt): ")
+
+operation(firstNum, secondNum, choosedOper)
