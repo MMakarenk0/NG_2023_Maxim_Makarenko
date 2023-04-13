@@ -1,12 +1,19 @@
 import os
 import argparse
+from colorama import *
 
+init(autoreset=True)
 # Function for seaching folders and subfolders using os.walk method to recursively walk through all subfolders of a specified folder
-def getFile(folder: str, searchFile: str):
-    for root, dirs, files in os.walk(folder):
-        for file in files:
-            if searchFile in file: 
-                print(f"File found: {os.path.join(root, file)}")
+
+def getFile(path: str, searchFile: str):
+    for fileName in os.listdir(path):
+        if os.path.isdir(os.path.join(path, fileName)):
+            try:
+                getFile(os.path.join(path, fileName), searchFile)
+            except PermissionError:
+                print(f"{Fore.RED}ACCESS DENIED! {os.path.join(path, fileName)}")
+        elif searchFile in fileName:
+            print(f"{Fore.GREEN}{Style.BRIGHT}FILE FOUND: {os.path.join(path, fileName)}")
 
 parser = argparse.ArgumentParser()
 
