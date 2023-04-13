@@ -41,9 +41,8 @@ def editBook(bookList):
 
 bookList = list() # created list for dictionaries
 
-info()
-
 while True:
+    info()
     nextStep = input("What is the next step?: ")
     match nextStep:
         case "create":
