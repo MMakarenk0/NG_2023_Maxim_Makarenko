@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="chat">
+    {% for msg in chatList%}
+        <h1>{{msg}}</h1>
+    {% endfor %}
+</div>
+<div class="gap">
+</div>
+<div class="center">
+<form action={{url}}, method="POST">
+    <input type="text", name="msg", placeholder="Enter your message: ", autocomplete="off", maxlength="89"><br>
+    <button>Send message!</button><br>
+</form>
+<form action="/">
+    <button>Exit</button>
+</form>
+</div>
+{% endblock %}

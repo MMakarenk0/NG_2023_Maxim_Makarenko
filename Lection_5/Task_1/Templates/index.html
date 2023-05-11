@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="parent">
+    <div class="block">
+        <div class="center">
+        <form action="/login" method="POST">
+            <legend>Welcome to chat!</legend>
+            <div class="gap"></div>
+            <input type="text", name="username", placeholder="Enter your username: ", maxlength="15"><br>
+            <input type="password", name="password", placeholder="Enter your password: ", maxlength="25"><br>
+            <button>Log In</button><br>
+            {% if login %}
+            <h4>You must enter your login!</h4>
+            {%endif%}
+            {% if password %}
+            <h4>You must enter your password!</h4>
+            {%endif%}
+            {% if check %}
+            <h4>Inсorrect login or password!</h4>
+            {%endif%}
+            
+        </form>
+        <form action="/registration">
+            <button>Create account</button>
+        </form>
+        </div>
+    
+    </div>
+  </div>
+
+{% endblock %}

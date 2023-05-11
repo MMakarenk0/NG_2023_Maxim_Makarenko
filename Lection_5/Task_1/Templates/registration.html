@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="parent">
+    <div class="block">
+        <div class="center">
+        <form action="/reg" method="POST">
+            <legend>Registation:</legend>
+            <div class="gap"></div>
+            <input type="text", name="username", placeholder="Enter your username: ", maxlength="15"><br>
+            <input type="password", name="password", placeholder="Enter your password: ", maxlength="25"><br>
+            <button>Create account</button><br>
+        </form>
+        {% if login %}
+        <h4>You must enter your login!</h4>
+        {%endif%}
+        {% if login_len %}
+        <h4>Your login's lenght must be 3 or longer!</h4>
+        {%endif%}
+        {% if unique_login %}
+        <h4>Such a login already exists!</h4>
+        {%endif%}
+        {% if password %}
+        <h4>Your password's lenght must be 5 or longer!</h4>
+        {%endif%}
+        <form action="/">
+            <button>Go back</button>
+        </form>
+    </div>
+    </div>
+</div>
+{% endblock %}
