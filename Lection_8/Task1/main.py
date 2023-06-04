@@ -50,7 +50,7 @@ parser = argparse.ArgumentParser()
 
 parser.add_argument('--url', required=True, help='Link of the site from which we will download the images.')
 parser.add_argument('--path', required=True, help='The folder to save downloaded pictures.')
-parser.add_argument('--threads', required=False, default=4, help='(optional)The number of threads for programme(WARNING! Do not use very large number! Default number: 4)')
+parser.add_argument('--threads', required=False, type=int, default=4, help='(optional)The number of threads for programme(WARNING! Do not use very large number! Default number: 4)')
 
 
 args = parser.parse_args()
